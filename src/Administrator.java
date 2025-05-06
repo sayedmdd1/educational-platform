@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Administrator extends User{
 
@@ -27,6 +26,11 @@ public class Administrator extends User{
             if(users[i].equals(userName)){
                 System.out.println("Admin "+name+" removed "+userName);
                 users[i]=null;
+                break;
+            }
+            else {
+                System.out.println(userName+" was not added by "+name);
+                break;
             }
         }
     }

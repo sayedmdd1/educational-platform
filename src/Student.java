@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+
 
 public class Student extends User{
 
-//    String[] course_name = new String[5];
     private String[][] grade_list = new String[5][2];
 
     Student(String name , String email){
@@ -33,11 +31,21 @@ public class Student extends User{
     }
 
     void get_grade(String courseName){
+        System.out.printf("\n-----------------\n");
         for(int i=0;i<c;i++){
             if(grade_list[i][0].equals(courseName)){
-                System.out.printf("\n-----------------\n");
+
                 System.out.println(name+" got '"+grade_list[i][1]+"' on "+courseName);
-//                System.out.println(courseName+" : "+ grade_list[i][1]);
+                break;
+            }
+            else if(grade_list[i][0].equals(courseName) && grade_list[i][1]==null)
+            {
+                System.out.println(courseName+" : ---- (not graded yet)");
+                break;
+            }
+            else{
+                System.out.println(name + " did not enroll on " + courseName);
+                break;
             }
         }
     }
